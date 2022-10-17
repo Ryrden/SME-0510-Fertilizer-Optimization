@@ -5,13 +5,27 @@
 Integrantes
 ```
 
-
 Ryan Souza Sá Teles - 12822062
 
 ```
 
 ## Modelagem do problema
+$x_j$: Quantidade do transportado da origem $i$ ao destino $j$
 
+$c_{ij}$: Custo por unidade do transporte da origem $i$ ao destino $j$
+
+$a_i$ Capacidade de produção da origem $i$
+
+$b$: Demanda do destino
+
+$min$ $\sum\limits_{i=1}^{m} \sum\limits_{j=1}^{n} c_{ij} x_{ij}$
+
+$s.a:$  
+$\sum\limits_{j=1}^{n} x_{ij} \leq a$ $\forall i \in \{1,...,m\}$
+
+$\sum\limits_{i=1}^{m} x_{ij} = b_j$ $\forall j \in \{1,...,n\}$
+
+$x_{ij} \geq 0$ $\forall i \in \{1,...,m\}$ $\forall j \in \{1,...,n\}$
 
 ## Variávias e Restrições
 
