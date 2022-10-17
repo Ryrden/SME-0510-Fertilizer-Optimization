@@ -21,3 +21,4 @@ Ryan Souza Sá Teles - 12822062
 3. Rode o `main.py` e seja feliz
 
 ## Como testar o programa para outras variáveis
+https://www.canalrural.com.br/noticias/agricultura/conheca-os-50-municipios-mais-ricos-na-agricultura-brasileira/
