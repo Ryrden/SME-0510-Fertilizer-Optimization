@@ -16,7 +16,9 @@ Além disto, a corporação apresenta clientes em todas as capitais dos estados 
 Integrantes
 ```
 
-
+João Lucas Pereira e Sousa - 10994311
+Joel Felipe Coelho - 4865826
+Moniely Silva Barboza - 12563800
 Ryan Souza Sá Teles - 12822062
 
 ```
