@@ -30,15 +30,10 @@ for tr in tbody.find_all('tr'):
 
     if (linha_cidade[0].text.lower() in polos):
         distancias = []
-
         for dist in linha_cidade:
             distancias.append(dist.text)
-
         matriz_distancia.append(distancias)
 
-# Deletando a ultima coluna, a qual repete dados
-matriz_distancia.pop(-1)
-cidades_coluna.pop(-1)
 
 # coloca em arquivo (tabulate)
 with open('distancias.md', 'w', -1, "utf-8") as f:
