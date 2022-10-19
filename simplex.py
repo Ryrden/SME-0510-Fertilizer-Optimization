@@ -19,9 +19,9 @@ with open('data.csv',  encoding='utf-8') as arquivo:
     nro_linhas = len(tabela)
     nro_colunas = len(tabela[0][1])
 
-    #Preenchendo a função objetivo, a matriz de restrição de capacidade e a matriz de restrição de demanda
+    # Preenchendo a função objetivo, a matriz de restrição de capacidade e a matriz de restrição de demanda
     funcao_objetivo = np.array([])
-    
+
     for i, linha in enumerate(tabela):
         if i < nro_linhas-1:
             funcao_objetivo = np.append(
@@ -46,11 +46,27 @@ with open('data.csv',  encoding='utf-8') as arquivo:
     # Preencher a A_eq
     A_eq = np.zeros((nro_colunas, nro_colunas_func_objetivo))
 
+    for i in range(nro_colunas):
+        A_eq[i][i] = 1
+        if i+nro_colunas < nro_colunas_func_objetivo:
+            A_eq[i][i+nro_colunas] = 1
+        if i+nro_colunas*2 < nro_colunas_func_objetivo:
+            A_eq[i][i+nro_colunas*2] = 1
+        if i+nro_colunas*3 < nro_colunas_func_objetivo:
+            A_eq[i][i+nro_colunas*3] = 1
 
-    print(funcao_objetivo)
+    # escrever num arquivo a matriz A_eq
+    with open('A_eq.txt', 'w', newline='') as csvfile:
+        #escrever sem .0
+        spamwriter = csv.writer(csvfile, delimiter=' ')
+        for row in A_eq:
+            spamwriter.writerow(row)
+
+
+"""     print(funcao_objetivo)
     print(A_ub)
     print(demanda)
-    print(capacidade)
+    print(capacidade) """
 
 """ c = [4928, 2444, 5772, 5076]
 
