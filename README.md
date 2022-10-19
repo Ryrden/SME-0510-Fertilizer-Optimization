@@ -1,3 +1,8 @@
+---
+layout: default
+title: Fertilizer Optimization
+---
+
 # Fertilizer Optimization
 
 ## **Descrição do problema**
@@ -25,22 +30,22 @@ Um restringimento da distribuição dessas mercadorias é justamente a capacidad
 
 ## **Modelagem do problema**
 
-$x_j$: Quantidade do transportado da origem $i$ ao destino $j$
+$$x_j$$: Quantidade do transportado da origem $$i$$ ao destino $$j$$
 
-$c_{ij}$: Custo por unidade do transporte da origem $i$ ao destino $j$
+$$c_{ij}$$: Custo por unidade do transporte da origem $$i$$ ao destino $$j$$
 
-$a_i$ Capacidade de produção da origem $i$
+$$a_i$$ Capacidade de produção da origem $$i$$
 
-$b_i$: Demanda do destino $i$
+$$b_i$$: Demanda do destino $$i$$
 
-$min$ $\sum\limits_{i=1}^{m} \sum\limits_{j=1}^{n} c_{ij} x_{ij}$
+$$min$$ $$\sum\limits_{i=1}^{m} \sum\limits_{j=1}^{n} c_{ij} x_{ij}$$
 
-$s.a:$  
-$\sum\limits_{j=1}^{n} x_{ij} \leq a$ $\forall i \in \{1,...,m\}$
+$$s.a:$$
+$$\sum\limits_{j=1}^{n} x_{ij} \leq a$$ $$\forall i \in \{1,...,m\}$$
 
-$\sum\limits_{i=1}^{m} x_{ij} = b_j$ $\forall j \in \{1,...,n\}$
+$$\sum\limits_{i=1}^{m} x_{ij} = b_j$$ $$\forall j \in \{1,...,n\}$$
 
-$x_{ij} \geq 0$ $\forall i \in \{1,...,m\}$ $\forall j \in \{1,...,n\}$
+$$x_{ij} \geq 0$$ $$\forall i \in \{1,...,m\}$$ $$\forall j \in \{1,...,n\}$$
 
 ## **Variávias e Restrições**
 
@@ -74,11 +79,11 @@ $x_{ij} \geq 0$ $\forall i \in \{1,...,m\}$ $\forall j \in \{1,...,n\}$
 
 O método simplex é desenvolvido na seguinte forma padrão:
 
-$
+$$
 Minimizar f(x) = c^Tx \\
             Ax = b\\
             x \geq 0
-$
+$$
 
 
 ---
