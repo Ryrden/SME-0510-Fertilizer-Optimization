@@ -17,7 +17,6 @@ Ryan Souza Sá Teles           - 12822062
 
 ---  
 
-
 ## **Descrição do problema**
 
 O atual consumo brasileiro de fertilizantes é próximo a 45 milhões de toneladas por ano, o que nos torna o quarto maior consumidor, tendo à nossa frente apenas os Estados Unidos, a Índia e a China. A grande diferença entre o Brasil e os demais grandes consumidores é que aqui 85% do consumo são importados, enquanto os outros países produzem a maior parte do que consomem. Entre os principais nutrientes necessários para a agricultura estão o nitrogênio, fósforo e potássio, elementos estes que são encontrados em produtos fertilizantes.
@@ -41,8 +40,7 @@ Conjuntamente, é necessário calcular o custo de entrega dos fertilizantes para
 
 Um restringimento da distribuição dessas mercadorias é justamente a capacidade de produção de cada unidade da companhia, a qual mede a capacidade máxima de fertilizantes produzidos (em toneladas) em um período. Tal restrição é de suma importância e faz parte da semântica do problema, sendo necessário ser atendida na elaboração da solução.
 
---- 
-
+---
 
 ### **Tabela de Distâncias**
 
@@ -55,72 +53,141 @@ Um restringimento da distribuição dessas mercadorias é justamente a capacidad
 
 ---
 
-
 ## **Modelagem do problema**
 
-$x_{ij}$: Quantidade em toneladas de fertilizantes transportada da origem $i$ ao destino $j$
+$$x_{ij}$$: Quantidade em toneladas de fertilizantes transportada da origem $$i$$ ao destino $$j$$
 
-$c_{ij}$: Custo do transporte de fertilizantes da origem $i$ ao destino $j$
+$$c_{ij}$$: Custo do transporte de fertilizantes da origem $$i$$ ao destino $$j$$
 
-$a_i$: Capacidade de produção da origem $i$
+$$a_i$$: Capacidade de produção da origem $$i$$
 
-$b_i$: Demanda do destino $i$
+$$b_i$$: Demanda do destino $$i$$
 
 $$
 min \sum\limits_{i=1}^{m} \sum\limits_{j=1}^{n} c_{ij} x_{ij} \\
 $$
 
 $$
-\sum\limits_{j=1}^{n} x_{ij} \leq a \ \ \forall i \in \{1,...,m\} \\
-\ \\
-\sum\limits_{i=1}^{m} x_{ij} = b_j \ \ \forall j \in \{1,...,n\} \\
-\ \\
+\sum\limits_{j=1}^{n} x_{ij} \leq a \ \ \forall i \in \{1,...,m\}
+$$
+
+$$
+\sum\limits_{i=1}^{m} x_{ij} = b_j \ \ \forall j \in \{1,...,n\}
+$$
+
+$$
 x_{ij} \geq 0 \ \ \  \forall i \in \{1,...,m\} \ \ \forall j \in \{1,...,n\}
 $$
 
 ---
 
-
 ### **Variáveis e Restrições**
 
 Portanto, precisamos respeitar as capacidades dos unidades de produção e atender a demanda de cada estado. Além disso, a quantidade de fertilizantes transportada deve ser maior ou igual a zero.  
 
-
 #### **Restrições de capacidades de produção de cada unidade:**
 
 $$
-x_{1,1}  +  x_{1,2} + \cdots + x_{1, 20} \le 1713280  \\
-x_{2,1} + x_{2,2} + \cdots + x_{2, 20} \le 2141600    \\
-x_{3,1} + x_{3,2} + \cdots + x_{3, 20} \le 1284960    \\
-x_{4,1} + x_{4,2} + \cdots + x_{4, 20} \le 3854879    \\
+x_{1,1}  +  x_{1,2} + \cdots + x_{1, 20} \le 1713280
+$$
+
+$$
+x_{2,1} + x_{2,2} + \cdots + x_{2, 20} \le 2141600
+$$
+
+$$
+x_{3,1} + x_{3,2} + \cdots + x_{3, 20} \le 1284960
+$$
+
+$$
+x_{4,1} + x_{4,2} + \cdots + x_{4, 20} \le 3854879
 $$
 
 #### **Restrições de demandas de cada estado brasileiro:**  
 
 $$
-x_{1,1} + x_{2,1} + x_{3,1} + x_{4,1} = 36941         \\
-x_{1,2} + x_{2,2} + x_{3,2} + x_{4,2} = 10427         \\
-x_{1,3} + x_{2,3} + x_{3,3} + x_{4,3} = 458371        \\
-x_{1,4} + x_{2,4} + x_{3,4} + x_{4,4} = 108199        \\
-x_{1,5} + x_{2,5} + x_{3,5} + x_{4,5} = 793001        \\
-x_{1,6} + x_{2,6} + x_{3,6} + x_{4,6} = 162918        \\
-x_{1,7} + x_{2,7} + x_{3,7} + x_{4,7} = 1697134       \\
-x_{1,8} + x_{2,8} + x_{3,8} + x_{4,8} = 442018        \\
-x_{1,9} + x_{2,9} + x_{3,9} + x_{4,9} = 1000545       \\
-x_{1,10} + x_{2,10} + x_{3,10} + x_{4,10} = 115203    \\
-x_{1,11} + x_{2,11} + x_{3,11} + x_{4,11} = 15694     \\
-x_{1,12} + x_{2,12} + x_{3,12} + x_{4,12} = 1025600   \\
-x_{1,13} + x_{2,13} + x_{3,13} + x_{4,13} = 36900     \\
-x_{1,14} + x_{2,14} + x_{3,14} + x_{4,14} = 107832    \\
-x_{1,15} + x_{2,15} + x_{3,15} + x_{4,15} = 1060803   \\
-x_{1,16} + x_{2,16} + x_{3,16} + x_{4,16} = 32591     \\
-x_{1,17} + x_{2,17} + x_{3,17} + x_{4,17} = 211497    \\
-x_{1,18} + x_{2,18} + x_{3,18} + x_{4,18} = 1068091   \\
-x_{1,19} + x_{2,19} + x_{3,19} + x_{4,19} = 28054     \\
-x_{1,20} + x_{2,20} + x_{3,20} + x_{4,20} = 154583    \\
+x_{1,1} + x_{2,1} + x_{3,1} + x_{4,1} = 36941
+$$
+
+$$
+x_{1,2} + x_{2,2} + x_{3,2} + x_{4,2} = 10427
+$$
+
+$$
+x_{1,3} + x_{2,3} + x_{3,3} + x_{4,3} = 458371
+$$
+
+$$
+x_{1,4} + x_{2,4} + x_{3,4} + x_{4,4} = 108199
+$$
+
+$$
+x_{1,5} + x_{2,5} + x_{3,5} + x_{4,5} = 793001
+$$
+
+$$
+x_{1,6} + x_{2,6} + x_{3,6} + x_{4,6} = 162918
+$$
+
+$$
+x_{1,7} + x_{2,7} + x_{3,7} + x_{4,7} = 1697134
+$$
+
+$$
+x_{1,8} + x_{2,8} + x_{3,8} + x_{4,8} = 442018
+$$
+
+$$
+x_{1,9} + x_{2,9} + x_{3,9} + x_{4,9} = 1000545
+$$
+
+$$
+x_{1,10} + x_{2,10} + x_{3,10} + x_{4,10} = 115203
+$$
+
+$$
+x_{1,11} + x_{2,11} + x_{3,11} + x_{4,11} = 15694  
+$$
+
+$$
+x_{1,12} + x_{2,12} + x_{3,12} + x_{4,12} = 1025600
+$$
+
+$$
+x_{1,13} + x_{2,13} + x_{3,13} + x_{4,13} = 36900  
+$$
+
+$$
+x_{1,14} + x_{2,14} + x_{3,14} + x_{4,14} = 107832
+$$
+
+$$
+x_{1,15} + x_{2,15} + x_{3,15} + x_{4,15} = 1060803
+$$
+
+$$
+x_{1,16} + x_{2,16} + x_{3,16} + x_{4,16} = 32591  
+$$
+
+$$
+x_{1,17} + x_{2,17} + x_{3,17} + x_{4,17} = 211497
+$$
+
+$$
+x_{1,18} + x_{2,18} + x_{3,18} + x_{4,18} = 1068091
+$$
+
+$$
+x_{1,19} + x_{2,19} + x_{3,19} + x_{4,19} = 28054  
+$$
+
+$$
+x_{1,20} + x_{2,20} + x_{3,20} + x_{4,20} = 154583
+$$
+
+$$
 $$
 ---
-
 
 ### **Tabela Completa**
 
@@ -136,19 +203,27 @@ $$
 
 ---
 
-
 ## **Método Simplex**
 
 O método simplex é desenvolvido na seguinte forma padrão:
 
 $$
-Minimizar \ \ f(x) = c^Tx \\
-            A_{ub}x \leq b_{ub}, \\
-            A_{eq}x = b_{eq} \\
-            l \leq x \leq u
+Minimizar \ \ f(x) = c^Tx
 $$
 
-onde $x$ é o vetor de variáveis de decisão, $c$ é o vetor de custos, $A_{ub}$ é a matriz de restrições de desigualdade, $b_{ub}$ é o vetor de restrições de desigualdade, $A_{eq}$ é a matriz de restrições de igualdade, $b_{eq}$ é o vetor de restrições de igualdade, $l$ é o vetor de limites inferiores e $u$ é o vetor de limites superiores.
+$$
+A_{ub}x \leq b_{ub},
+$$
+
+$$
+A_{eq}x = b_{eq}
+$$
+
+$$
+l \leq x \leq u
+$$
+
+onde $x$ é o vetor de variáveis de decisão, $$c$$ é o vetor de custos, $$A_{ub}$$ é a matriz de restrições de desigualdade, $$b_{ub}$$ é o vetor de restrições de desigualdade, $$A_{eq}$$ é a matriz de restrições de igualdade, $$b_{eq}$$ é o vetor de restrições de igualdade, $$l$$ é o vetor de limites inferiores e $$u$$ é o vetor de limites superiores.
 
 ### **O Algoritmo Simplex**
 
@@ -159,15 +234,11 @@ A estrutura do método Simplex é composta pelas seguintes etapas:
 
 Os possíveis resultados neste passo são que uma SBV é encontrada ou que a região viável está vazia (neste último caso o programa linear é chamado de inviável).
 
-
 - **Etapa 2:** Caso nesta etapa não haja um vértice adjacente melhor que o vértice atual, então PARE. O vértice atual corresponde à solução ótima. Em caso contrário, vá ao Passo 3. Os possíveis resultados do passo 2 são uma solução básica viável ótima ou uma função objetiva ilimitada.
-
 
 - **Etapa 3:** Encontrar entre os vértices adjacentes uma direção a qual existe uma solução viável melhor e então ir em direção dela; volte ao Passo 2. Ele então faz uma mudança de vértice na direção que mais diminua a função objetivo e verifica se este novo vértice é ótimo.
 
-
 Vale ressaltar que o algoritmo sempre termina porque o número de vértices no topo do polígono é finito, além disso, como saltamos entre os vértices sempre na mesma direção (a da função objetivo), esperamos que o número de vértices visitados seja pequeno.
-
 
 ### **SciPy - Simplex**
 
@@ -202,8 +273,8 @@ A seguir, será exposto o resultado da otimização linear do problema de distri
 | Campo Grande         | 0      | 0     | 0        | 0       | 793001  | 162918   | 1697134 | 442018       | 0              | 115203 | 0           | 0        | 0      | 29114    | 0            | 32591       | 0             | 0         | 0       | 154583 |
 | Demandas             | 36941  | 10427 | 458371   | 108199  | 793001  | 162918   | 1697134 | 442018       | 1000545        | 115203 | 15694       | 1025600  | 36900  | 107832   | 1060803      | 32591       | 211497        | 1068091   | 28054   | 154583 |
 
-
 ---
+
 ## **Justificativa da extração dos dados**
 
 Todas informações empregadas durante o desenvolvimento do trabalho são verdadeiras, cujas fontes estão disponíveis na seção de bibliografia. Vale frisar a extração/cálculo de três conjuntos de dados em específico:
@@ -225,6 +296,7 @@ Todas informações empregadas durante o desenvolvimento do trabalho são verdad
 3. Rode  `python script.py` e seja feliz
 
 ---
+
 ## **Bibliografia**
 
 <https://www.npct.com.br/npctweb/npct.nsf/article/BRS-3132>
@@ -238,5 +310,3 @@ Todas informações empregadas durante o desenvolvimento do trabalho são verdad
 <https://www.canalrural.com.br/noticias/agricultura/conheca-os-50-municipios-mais-ricos-na-agricultura-brasileira/>
 
 ---
-
-
