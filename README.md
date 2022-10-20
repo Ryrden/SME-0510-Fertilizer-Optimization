@@ -8,7 +8,7 @@ title: Fertilizer Optimization
 
 ### **Integrantes do grupo**
 
-```
+```text
 Joel Felipe Coelho            - 4865826
 João Lucas Pereira e Sousa    - 10994311
 Moniely Silva Barboza         - 12563800
@@ -44,12 +44,23 @@ Um restringimento da distribuição dessas mercadorias é justamente a capacidad
 
 ### **Tabela de Distâncias**
 
-| Unidades de Produção | Maceió | Natal | Salvador | Vitória | Goiânia | São Luís | Cuiabá | Campo Grande | Belo Horizonte | Belém | João Pessoa | Curitiba | Recife | Teresina | Porto Alegre | Porto Velho | Florianópolis | São Paulo | Aracaju | Palmas |
-| :------------------: | :----: | :---: | :------: | :-----: | :-----: | :------: | :----: | :----------: | :------------: | :---: | :---------: | :------: | :----: | :------: | :----------: | :---------: | :-----------: | :-------: | :-----: | :----: |
-|     Ponta Grossa     |  2830  | 3343  |   2382   |  1455   |  3120   |   3099   |  1559  |     864      |      1089      | 3098  |    3172     |   117    |  3059  |   2920   |     856      |    3017     |      420      |    516    |  2576   |  1937  |
-|       Paulínia       |  2429  | 2942  |   1980   |  1021   |   791   |   2773   |  1422  |     912      |      611       | 2772  |    2771     |   504    |  2657  |   2543   |     1232     |    2882     |      796      |    123    |  2174   |  1612  |
-|       Cubatão        |  2462  | 2975  |   2014   |   991   |   966   |   2953   |  1598  |     1043     |      644       | 2948  |    2804     |   400    |  2690  |   2718   |     1128     |    3058     |      692      |    59     |  2208   |  1879  |
-|     Campo Grande     |  2822  | 3446  |   2485   |  1926   |   839   |   2852   |  729   |      1       |      1269      | 2850  |    3275     |   977    |  3162  |   2719   |     1443     |    2189     |     2182      |    987    |  2679   |  1690  |
+> Tabela Parte 1
+
+| Unidades de Produção | Maceió | Natal | Salvador | Vitória | Goiânia | São Luís | Cuiabá | Campo Grande | Belo Horizonte | Belém |
+| :------------------: | :----: | :---: | :------: | :-----: | :-----: | :------: | :----: | :----------: | :------------: | :---: |
+|     Ponta Grossa     |  2830  | 3343  |   2382   |  1455   |  3120   |   3099   |  1559  |     864      |      1089      | 3098  |
+|       Paulínia       |  2429  | 2942  |   1980   |  1021   |   791   |   2773   |  1422  |     912      |      611       | 2772  |
+|       Cubatão        |  2462  | 2975  |   2014   |   991   |   966   |   2953   |  1598  |     1043     |      644       | 2948  |
+|     Campo Grande     |  2822  | 3446  |   2485   |  1926   |   839   |   2852   |  729   |      1       |      1269      | 2850  |
+
+> Tabela Parte 2
+
+| Unidades de Produção | João Pessoa | Curitiba | Recife | Teresina | Porto Alegre | Porto Velho | Florianópolis | São Paulo | Aracaju | Palmas |
+| :------------------: | :---------: | :------: | :----: | :------: | :----------: | :---------: | :-----------: | :-------: | :-----: | :----: |
+|     Ponta Grossa     |    3172     |   117    |  3059  |   2920   |     856      |    3017     |      420      |    516    |  2576   |  1937  |
+|       Paulínia       |    2771     |   504    |  2657  |   2543   |     1232     |    2882     |      796      |    123    |  2174   |  1612  |
+|       Cubatão        |    2804     |   400    |  2690  |   2718   |     1128     |    3058     |      692      |    59     |  2208   |  1879  |
+|     Campo Grande     |    3275     |   977    |  3162  |   2719   |     1443     |    2189     |     2182      |    987    |  2679   |  1690  |
 
 ---
 
@@ -185,21 +196,43 @@ $$
 x_{1,20} + x_{2,20} + x_{3,20} + x_{4,20} = 154583
 $$
 
-$$
-$$
 ---
 
 ### **Tabela Completa**
 
-| Unidades de Produção |  Maceió   | Natal |       Salvador       |  Vitória  | Goiânia | São Luís | Cuiabá  | Campo Grande | Belo Horizonte | Belém  | João Pessoa | Curitiba | Recife | Teresina | Porto Alegre | Porto Velho | Florianópolis | São Paulo | Aracaju | Palmas | **Capacidade** |
-| :------------------: | :-------: | :---: | :------------------: | :-------: | :-----: | :------: | :-----: | :----------: | :------------: | :----: | :---------: | :------: | :----: | :------: | :----------: | :---------: | :-----------: | :-------: | :-----: | :----: | :------------: |
-|     Ponta Grossa     |   11320   | 13372 |         9528         |   5820    |  12480  |  12396   |  6236   |     3456     |      4356      | 12392  |    12688    |   468    | 12236  |  11680   |     3424     |    12068    |     1680      |   2064    |  10304  |  7748  |    1713280     |
-|       Paulínia       |   9716    | 11768 |         7920         |   4084    |  3164   |  11092   |  5688   |     3648     |      2444      | 11088  |    11084    |   2016   | 10628  |  10172   |     4928     |    11528    |     3184      |    492    |  8696   |  6448  |    2141600     |
-|       Cubatão        |   9848    | 11900 |         8056         |   3964    |  3864   |  11812   |  6392   |     4172     |      2576      | 11792  |    11216    |   1600   | 10760  |  10872   |     4512     |    12232    |     2768      |    236    |  8832   |  7516  |    1284960     |
-|     Campo Grande     |   11288   | 13784 |         9940         |   7704    |  3356   |  11408   |  2916   |      4       |      5076      | 11400  |    13100    |   3908   | 12648  |  10876   |     5772     |    8756     |     8728      |   3948    |  10716  |  6760  |    3854879     |
-|     **Demandas**     |   36941   | 10427 |        458371        |  108199   | 793001  |  162918  | 1697134 |    442018    |    1000545     | 115203 |    15694    | 1025600  | 36900  |  107832  |   1060803    |    32591    |    211497     |  1068091  |  28054  | 154583 |                |
-|                      |           |       |                      |           |         |          |         |              |                |        |             |          |        |          |              |             |               |           |         |        |                |
-|  **Demanda Total**   | *8566399* |       | **Capacidade Total** | *8994719* |
+> Tabela Parte 1
+
+| Unidades de Produção | Maceió | Natal | Salvador | Vitória | Goiânia | São Luís | Cuiabá  | Campo Grande | Belo Horizonte | **Capacidade** |
+| :------------------: | :----: | :---: | :------: | :-----: | :-----: | :------: | :-----: | :----------: | :------------: | :------------: |
+|     Ponta Grossa     | 11320  | 13372 |   9528   |  5820   |  12480  |  12396   |  6236   |     3456     |      4356      |    1713280     |
+|       Paulínia       |  9716  | 11768 |   7920   |  4084   |  3164   |  11092   |  5688   |     3648     |      2444      |    2141600     |
+|       Cubatão        |  9848  | 11900 |   8056   |  3964   |  3864   |  11812   |  6392   |     4172     |      2576      |    1284960     |
+|     Campo Grande     | 11288  | 13784 |   9940   |  7704   |  3356   |  11408   |  2916   |      4       |      5076      |    3854879     |
+|     **Demandas**     | 36941  | 10427 |  458371  | 108199  | 793001  |  162918  | 1697134 |    442018    |    1000545     |                |
+
+> Tabela Parte 2
+
+| Unidades de Produção | Belém  | João Pessoa | Curitiba | Recife | Teresina | Porto Alegre | Porto Velho | Florianópolis | **Capacidade** |
+| :------------------: | :----: | :---------: | :------: | :----: | :------: | :----------: | :---------: | :-----------: | :------------: |
+|     Ponta Grossa     | 12392  |    12688    |   468    | 12236  |  11680   |     3424     |    12068    |     1680      |    1713280     |
+|       Paulínia       | 11088  |    11084    |   2016   | 10628  |  10172   |     4928     |    11528    |     3184      |    2141600     |
+|       Cubatão        | 11792  |    11216    |   1600   | 10760  |  10872   |     4512     |    12232    |     2768      |    1284960     |
+|     Campo Grande     | 11400  |    13100    |   3908   | 12648  |  10876   |     5772     |    8756     |     8728      |    3854879     |
+|     **Demandas**     | 115203 |    15694    | 1025600  | 36900  |  107832  |   1060803    |    32591    |    211497     |                |
+
+> Tabela Parte 3
+
+| Unidades de Produção | São Paulo | Aracaju | Palmas | **Capacidade** |
+| :------------------: | :-------: | :-----: | :----: | :------------: |
+|     Ponta Grossa     |   2064    |  10304  |  7748  |    1713280     |
+|       Paulínia       |    492    |  8696   |  6448  |    2141600     |
+|       Cubatão        |    236    |  8832   |  7516  |    1284960     |
+|     Campo Grande     |   3948    |  10716  |  6760  |    3854879     |
+|     **Demandas**     |  1068091  |  28054  | 154583 |                |
+
+| **Demanda Total** | **Capacidade Total** |
+| :---------------: | :------------------: |
+|     *8566399*     |      *8994719*       |
 
 ---
 
@@ -223,7 +256,7 @@ $$
 l \leq x \leq u
 $$
 
-onde $x$ é o vetor de variáveis de decisão, $$c$$ é o vetor de custos, $$A_{ub}$$ é a matriz de restrições de desigualdade, $$b_{ub}$$ é o vetor de restrições de desigualdade, $$A_{eq}$$ é a matriz de restrições de igualdade, $$b_{eq}$$ é o vetor de restrições de igualdade, $$l$$ é o vetor de limites inferiores e $$u$$ é o vetor de limites superiores.
+onde $$x$$ é o vetor de variáveis de decisão, $$c$$ é o vetor de custos, $$A_{ub}$$ é a matriz de restrições de desigualdade, $$b_{ub}$$ é o vetor de restrições de desigualdade, $$A_{eq}$$ é a matriz de restrições de igualdade, $$b_{eq}$$ é o vetor de restrições de igualdade, $$l$$ é o vetor de limites inferiores e $$u$$ é o vetor de limites superiores.
 
 ### **O Algoritmo Simplex**
 
@@ -265,13 +298,25 @@ O método linprog resolve problemas de programação linear da seguinte forma:
 
 A seguir, será exposto o resultado da otimização linear do problema de distribuição de fertilizantes. O algoritmo encontrou uma solução ótima viável para o problema, na qual os dados que serão apresentados representam os valores das variáveis de decisão que minimizam a função objetivo, atendendo às restrições definidas:
 
-| Unidades de Produção | Maceió | Natal | Salvador | Vitória | Goiânia | São Luís | Cuiabá  | Campo Grande | Belo Horizonte | Belém  | João Pessoa | Curitiba | Recife | Teresina | Porto Alegre | Porto Velho | Florianópolis | São Paulo | Aracaju | Palmas |
-| -------------------- | ------ | ----- | -------- | ------- | ------- | -------- | ------- | ------------ | -------------- | ------ | ----------- | -------- | ------ | -------- | ------------ | ----------- | ------------- | --------- | ------- | ------ |
-| Ponta Grossa         | 0      | 0     | 0        | 0       | 0       | 0        | 0       | 0            | 0              | 0      | 0           | 1025600  | 0      | 0        | 476183       | 0           | 211497        | 0         | 0       | 0      |
-| Paulínia             | 36941  | 10427 | 458371   | 108199  | 0       | 0        | 0       | 0            | 1000545        | 0      | 15694       | 0        | 36900  | 78718    | 0            | 0           | 0             | 367751    | 28054   | 0      |
-| Cubatão              | 0      | 0     | 0        | 0       | 0       | 0        | 0       | 0            | 0              | 0      | 0           | 0        | 0      | 0        | 584620       | 0           | 0             | 700340    | 0       | 0      |
-| Campo Grande         | 0      | 0     | 0        | 0       | 793001  | 162918   | 1697134 | 442018       | 0              | 115203 | 0           | 0        | 0      | 29114    | 0            | 32591       | 0             | 0         | 0       | 154583 |
-| Demandas             | 36941  | 10427 | 458371   | 108199  | 793001  | 162918   | 1697134 | 442018       | 1000545        | 115203 | 15694       | 1025600  | 36900  | 107832   | 1060803      | 32591       | 211497        | 1068091   | 28054   | 154583 |
+> Tabela Parte 1
+
+| Unidades de Produção | Maceió | Natal | Salvador | Vitória | Goiânia | São Luís | Cuiabá  | Campo Grande | Belo Horizonte | Belém  |
+| :------------------: | :----: | :---: | :------: | :-----: | :-----: | :------: | :-----: | :----------: | :------------: | :----: |
+|     Ponta Grossa     |   0    |   0   |    0     |    0    |    0    |    0     |    0    |      0       |       0        |   0    |
+|       Paulínia       | 36941  | 10427 |  458371  | 108199  |    0    |    0     |    0    |      0       |    1000545     |   0    |
+|       Cubatão        |   0    |   0   |    0     |    0    |    0    |    0     |    0    |      0       |       0        |   0    |
+|     Campo Grande     |   0    |   0   |    0     |    0    | 793001  |  162918  | 1697134 |    442018    |       0        | 115203 |
+|     **Demandas**     | 36941  | 10427 |  458371  | 108199  | 793001  |  162918  | 1697134 |    442018    |    1000545     | 115203 |
+
+> Tabela Parte 2
+
+| Unidades de Produção | João Pessoa | Curitiba | Recife | Teresina | Porto Alegre | Porto Velho | Florianópolis | São Paulo | Aracaju | Palmas |
+| :------------------: | :---------: | :------: | :----: | :------: | :----------: | :---------: | :-----------: | :-------: | :-----: | :----: |
+|     Ponta Grossa     |      0      | 1025600  |   0    |    0     |    476183    |      0      |    211497     |     0     |    0    |   0    |
+|       Paulínia       |    15694    |    0     | 36900  |  78718   |      0       |      0      |       0       |  367751   |  28054  |   0    |
+|       Cubatão        |      0      |    0     |   0    |    0     |    584620    |      0      |       0       |  700340   |    0    |   0    |
+|     Campo Grande     |      0      |    0     |   0    |  29114   |      0       |    32591    |       0       |     0     |    0    | 154583 |
+|     **Demandas**     |    15694    | 1025600  | 36900  |  107832  |   1060803    |    32591    |    211497     |  1068091  |  28054  | 154583 |
 
 ---
 
