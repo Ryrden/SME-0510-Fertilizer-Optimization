@@ -1,7 +1,3 @@
----
-layout: default
-title: Fertilizer Optimization
----
 # Fertilizer Optimization
 
 ## **SME0510 - Introdução à Pesquisa Operacional**
@@ -66,13 +62,13 @@ Um restringimento da distribuição dessas mercadorias é justamente a capacidad
 
 ## **Modelagem do problema**
 
-$$x_{ij}$$: Quantidade em toneladas de fertilizantes transportada da origem $$i$$ ao destino $$j$$
+$x_{ij}$: Quantidade em toneladas de fertilizantes transportada da origem $i$ ao destino $j$
 
-$$c_{ij}$$: Custo do transporte de fertilizantes da origem $$i$$ ao destino $$j$$
+$c_{ij}$: Custo do transporte de fertilizantes da origem $i$ ao destino $j$
 
-$$a_i$$: Capacidade de produção da origem $$i$$
+$a_i$: Capacidade de produção da origem $i$
 
-$$b_i$$: Demanda do destino $$i$$
+$b_i$: Demanda do destino $i$
 
 $$
 min \sum\limits_{i=1}^{m} \sum\limits_{j=1}^{n} c_{ij} x_{ij} \\
@@ -256,7 +252,7 @@ $$
 l \leq x \leq u
 $$
 
-onde $$x$$ é o vetor de variáveis de decisão, $$c$$ é o vetor de custos, $$A_{ub}$$ é a matriz de restrições de desigualdade, $$b_{ub}$$ é o vetor de restrições de desigualdade, $$A_{eq}$$ é a matriz de restrições de igualdade, $$b_{eq}$$ é o vetor de restrições de igualdade, $$l$$ é o vetor de limites inferiores e $$u$$ é o vetor de limites superiores.
+onde $x$ é o vetor de variáveis de decisão, $c$ é o vetor de custos, $A_{ub}$ é a matriz de restrições de desigualdade, $b_{ub}$ é o vetor de restrições de desigualdade, $A_{eq}$ é a matriz de restrições de igualdade, $b_{eq}$ é o vetor de restrições de igualdade, $l$ é o vetor de limites inferiores e $u$ é o vetor de limites superiores.
 
 ### **O Algoritmo Simplex**
 
