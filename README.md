@@ -79,7 +79,7 @@ min \sum\limits_{i=1}^{m} \sum\limits_{j=1}^{n} c_{ij} x_{ij} \\
 $$
 
 $$
-\sum\limits_{j=1}^{n} x_{ij} \leq a \ \ \forall i \in \{1,...,m\}
+\sum\limits_{j=1}^{n} x_{ij} \leq a_i \ \ \forall i \in \{1,...,m\}
 $$
 
 $$
@@ -275,16 +275,16 @@ Vale ressaltar que o algoritmo sempre termina porque o número de vértices no t
 
 ### **SciPy - Simplex**
 
-A partir daqui, vamos utilizar o método simplex para resolver o problema de transporte. Para isso, vamos utilizar a biblioteca [scipy.optimize](https://docs.scipy.org/doc/scipy/reference/optimize.html) do Python, mais especificamente, o método [linprog](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linprog.html). SciPy é uma biblioteca Python para matemática, ciência e engenharia. Ela fornece muitas rotinas úteis para otimização, álgebra linear, integração numérica, interpolação, processamento de sinais e muito mais.
+A partir daqui, para utilizar o método simplex e resolver a problemática desenvolvida, vamos utilizar da biblioteca [scipy.optimize](https://docs.scipy.org/doc/scipy/reference/optimize.html) do Python, mais especificamente, o método [linprog](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linprog.html). SciPy é uma biblioteca Python para matemática, ciência e engenharia. Ela fornece muitas rotinas úteis para otimização, álgebra linear, integração numérica, interpolação, processamento de sinais e muito mais.
 
-O método linprog resolve problemas de programação linear da seguinte forma:
+O método linprog resolve problemas de programação linear, onde o objetivo é minimizar a função linear objetivo, sujeito a restrições lineares. O método linprog recebe como parâmetros:
 
 - **c**: 1-D array
   - Coeficientes da função objetivo a ser minimizada.
 - **A_ub**: 2-D array
   - Matriz de restrições de desigualdade. Cada linha da matriz representa uma restrição e cada coluna representa uma variável.
 - **b_ub**: 1-D array
-  - Vetor de restrições de desigualdade. Cada elemento representa um limite inferior para a restrição correspondente.
+  - Vetor de restrições de desigualdade. Cada elemento representa um limite superior para a restrição correspondente.
   - Em nossa modelagem, este parâmetro representava o vetor de capacidades de produção de fertilizantes de cada unidade.
 - **A_eq**: 2-D array
   - Matriz de restrições de igualdade. Cada linha da matriz representa uma restrição e cada coluna representa uma variável.
