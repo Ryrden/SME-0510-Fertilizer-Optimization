@@ -1,3 +1,7 @@
+---
+layout: default
+title: Fertilizer Optimization
+---
 # Fertilizer Optimization
 
 ## **SME0510 - Introdução à Pesquisa Operacional**
@@ -5,14 +9,14 @@
 ### **Integrantes do grupo**
 
 ```
-Joel Felipe Coelho - 4865826
-João Lucas Pereira e Sousa - 10994311
-Moniely Silva Barboza - 12563800
-Ryan Souza Sá Teles - 12822062  
+Joel Felipe Coelho            - 4865826
+João Lucas Pereira e Sousa    - 10994311
+Moniely Silva Barboza         - 12563800
+Ryan Souza Sá Teles           - 12822062  
 ```
 
 ---  
-<br/>
+
 
 ## **Descrição do problema**
 
@@ -38,7 +42,7 @@ Conjuntamente, é necessário calcular o custo de entrega dos fertilizantes para
 Um restringimento da distribuição dessas mercadorias é justamente a capacidade de produção de cada unidade da companhia, a qual mede a capacidade máxima de fertilizantes produzidos (em toneladas) em um período. Tal restrição é de suma importância e faz parte da semântica do problema, sendo necessário ser atendida na elaboração da solução.
 
 --- 
-<br/>
+
 
 ### **Tabela de Distâncias**
 
@@ -50,7 +54,7 @@ Um restringimento da distribuição dessas mercadorias é justamente a capacidad
 |     Campo Grande     |  2822  | 3446  |   2485   |  1926   |   839   |   2852   |  729   |      1       |      1269      | 2850  |    3275     |   977    |  3162  |   2719   |     1443     |    2189     |     2182      |    987    |  2679   |  1690  |
 
 ---
-<br/>
+
 
 ## **Modelagem do problema**
 
@@ -65,6 +69,7 @@ $b_i$: Demanda do destino $i$
 $$
 min \sum\limits_{i=1}^{m} \sum\limits_{j=1}^{n} c_{ij} x_{ij} \\
 $$
+
 $$
 \sum\limits_{j=1}^{n} x_{ij} \leq a \ \ \forall i \in \{1,...,m\} \\
 \ \\
@@ -74,12 +79,12 @@ x_{ij} \geq 0 \ \ \  \forall i \in \{1,...,m\} \ \ \forall j \in \{1,...,n\}
 $$
 
 ---
-<br/>
+
 
 ### **Variáveis e Restrições**
 
 Portanto, precisamos respeitar as capacidades dos unidades de produção e atender a demanda de cada estado. Além disso, a quantidade de fertilizantes transportada deve ser maior ou igual a zero.  
-<br/>
+
 
 #### **Restrições de capacidades de produção de cada unidade:**
 
@@ -90,7 +95,7 @@ x_{3,1} + x_{3,2} + \cdots + x_{3, 20} \le 1284960    \\
 x_{4,1} + x_{4,2} + \cdots + x_{4, 20} \le 3854879    \\
 $$
 
-<br/>
+
 
 #### **Restrições de demandas de cada estado brasileiro:**  
 
@@ -115,10 +120,9 @@ x_{1,17} + x_{2,17} + x_{3,17} + x_{4,17} = 211497    \\
 x_{1,18} + x_{2,18} + x_{3,18} + x_{4,18} = 1068091   \\
 x_{1,19} + x_{2,19} + x_{3,19} + x_{4,19} = 28054     \\
 x_{1,20} + x_{2,20} + x_{3,20} + x_{4,20} = 154583    \\
-
 $$
 ---
-<br/>
+
 
 ### **Tabela Completa**
 
@@ -133,7 +137,7 @@ $$
 |  **Demanda Total**   | *8566399* |       | **Capacidade Total** | *8994719* |
 
 ---
-<br/>
+
 
 ## **Método Simplex**
 
@@ -187,20 +191,7 @@ O método linprog resolve problemas de programação linear da seguinte forma:
   - Em nossa modelagem, este parâmetro representava o vetor de demandas de fertilizantes dos estados brasileiros.
 
 ---
-<br/>
 
-## **Como rodar o projeto**
-
-1. Baixe e instale [python](https://www.python.org/) em sua máquina
-2. Instale as dependências:
-   - `pip install BeautifulSoup`
-   - `pip install tabulate`
-   - `pip install requests`
-   - `pip install bs4`
-3. Rode  `python main.py` e seja feliz
-
----
-<br/>
 
 ## **Justificativa da extração dos dados**
 
@@ -213,8 +204,16 @@ Todas informações empregadas durante o desenvolvimento do trabalho são verdad
 > **Capacidades de produção de cada unidade**: O único conjunto de dados que não fora encontrado durante a pesquisa foram as capacidades de produção de fertilizantes de cada unidade de produção brasileira da companhia. Logo, a tomada de decisão para definição de tal coleção levou em consideração o tamanho das fábricas, ou seja, fábricas (unidades de produção) maiores, possuem uma maior capacidade de produção. Ademais, as demandas do mercado também foi um modo de medir a distribuição das capacidades de produção das unidades, com o objetivo de atender às necessidades do nicho em questão.
 
 ---
-<br/>
 
+## **Como rodar o projeto**
+
+1. Baixe e instale [python](https://www.python.org/) em sua máquina
+2. Instale as dependências:
+   - `pip install numpy`
+   - `pip install scipy`
+3. Rode  `python script.py` e seja feliz
+
+---
 ## **Bibliografia**
 
 <https://www.npct.com.br/npctweb/npct.nsf/article/BRS-3132>
@@ -228,5 +227,5 @@ Todas informações empregadas durante o desenvolvimento do trabalho são verdad
 <https://www.canalrural.com.br/noticias/agricultura/conheca-os-50-municipios-mais-ricos-na-agricultura-brasileira/>
 
 ---
-<br/>
+
 
