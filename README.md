@@ -198,7 +198,7 @@ $$
 
 ---
 
-### **Tabela Completa**
+### **Tabela de custos, demanda do destino e capacidade da produção**
 
 > Tabela Parte 1
 
