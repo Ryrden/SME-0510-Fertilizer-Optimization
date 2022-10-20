@@ -63,15 +63,6 @@ with open('data.csv',  encoding='utf-8') as arquivo:
 
     A_eq = preenche_A_eq(nro_cidades, nro_cidades_func_objetivo)
 
-
-# escrever num arquivo a matriz A_eq
-with open('A_eq2.txt', 'w', newline='') as csvfile:
-    # escrever sem .0
-    spamwriter = csv.writer(csvfile, delimiter=' ')
-    for row in A_eq:
-        spamwriter.writerow(row)
-
-
 capacidade = [
     [1713280],
     [2141600],

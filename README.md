@@ -95,8 +95,6 @@ x_{3,1} + x_{3,2} + \cdots + x_{3, 20} \le 1284960    \\
 x_{4,1} + x_{4,2} + \cdots + x_{4, 20} \le 3854879    \\
 $$
 
-
-
 #### **Restrições de demandas de cada estado brasileiro:**  
 
 $$
@@ -192,7 +190,20 @@ O método linprog resolve problemas de programação linear da seguinte forma:
 
 ---
 
+## **Resultados da otimização de distribuição de fertilizantes**
 
+A seguir, será exposto o resultado da otimização linear do problema de distribuição de fertilizantes. O algoritmo encontrou uma solução ótima viável para o problema, na qual os dados que serão apresentados representam os valores das variáveis de decisão que minimizam a função objetivo, atendendo às restrições definidas:
+
+| Unidades de Produção | Maceió | Natal | Salvador | Vitória | Goiânia | São Luís | Cuiabá  | Campo Grande | Belo Horizonte | Belém  | João Pessoa | Curitiba | Recife | Teresina | Porto Alegre | Porto Velho | Florianópolis | São Paulo | Aracaju | Palmas |
+| -------------------- | ------ | ----- | -------- | ------- | ------- | -------- | ------- | ------------ | -------------- | ------ | ----------- | -------- | ------ | -------- | ------------ | ----------- | ------------- | --------- | ------- | ------ |
+| Ponta Grossa         | 0      | 0     | 0        | 0       | 0       | 0        | 0       | 0            | 0              | 0      | 0           | 1025600  | 0      | 0        | 476183       | 0           | 211497        | 0         | 0       | 0      |
+| Paulínia             | 36941  | 10427 | 458371   | 108199  | 0       | 0        | 0       | 0            | 1000545        | 0      | 15694       | 0        | 36900  | 78718    | 0            | 0           | 0             | 367751    | 28054   | 0      |
+| Cubatão              | 0      | 0     | 0        | 0       | 0       | 0        | 0       | 0            | 0              | 0      | 0           | 0        | 0      | 0        | 584620       | 0           | 0             | 700340    | 0       | 0      |
+| Campo Grande         | 0      | 0     | 0        | 0       | 793001  | 162918   | 1697134 | 442018       | 0              | 115203 | 0           | 0        | 0      | 29114    | 0            | 32591       | 0             | 0         | 0       | 154583 |
+| Demandas             | 36941  | 10427 | 458371   | 108199  | 793001  | 162918   | 1697134 | 442018       | 1000545        | 115203 | 15694       | 1025600  | 36900  | 107832   | 1060803      | 32591       | 211497        | 1068091   | 28054   | 154583 |
+
+
+---
 ## **Justificativa da extração dos dados**
 
 Todas informações empregadas durante o desenvolvimento do trabalho são verdadeiras, cujas fontes estão disponíveis na seção de bibliografia. Vale frisar a extração/cálculo de três conjuntos de dados em específico:
